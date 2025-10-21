@@ -1,0 +1,9 @@
+{
+	"name": "df-spotify-de",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "64567ac7-e3e2-492d-beaa-61691c59a69b",
+		"tenantId": "e8d3f6d3-39b6-47ef-be61-fc2829f958dd"
+	}
+}
