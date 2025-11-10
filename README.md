@@ -42,6 +42,7 @@ The goal is to design an **incremental ingestion and transformation framework** 
 - Built a pipeline to extract data incrementally from Azure SQL Database.  
 - Used lookup and watermark techniques to identify new or changed records.  
 - Landed the data in **Bronze zone** of ADLS in **Parquet format**.
+
 ![Azure Data Factory Diagram](./Screeenshots/adf.png)
 
 ### 2️⃣ **Transformation – Azure Databricks**
@@ -51,6 +52,7 @@ The goal is to design an **incremental ingestion and transformation framework** 
   - Deduplication and null handling  
   - Business rule applications  
 - Wrote the cleansed data into **Silver layer** in **Delta format**.
+
 ![Azure Databricks Diagram](./Screeenshots/Silver_pipeline.png)
 
 ### 3️⃣ **Quality & SCD Management – LakeFlow**
@@ -58,6 +60,7 @@ The goal is to design an **incremental ingestion and transformation framework** 
   - Validate data quality across key dimensions.  
   - Apply **SCD Type 2 logic** to track historical changes in dimensional data.  
   - Write the final datasets to the **Gold layer** in Delta format.
+  
 ![Gold-Layer](./Screeenshots/gold_dlt.png)
 
 ### 4️⃣ **Downstream Analytics**
