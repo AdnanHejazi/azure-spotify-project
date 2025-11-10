@@ -7,7 +7,7 @@ The goal is to design an **incremental ingestion and transformation framework** 
 ---
 
 ## 🧱 Architecture Diagram
-![Architecture Diagram] (Screeenshots/architecture.png)
+![Architecture Diagram] (./Screeenshots/architecture.png)
 
 ### 🔄 **Data Flow Summary**
 1. **Azure SQL Database (Source)**  
@@ -42,7 +42,7 @@ The goal is to design an **incremental ingestion and transformation framework** 
 - Built a pipeline to extract data incrementally from Azure SQL Database.  
 - Used lookup and watermark techniques to identify new or changed records.  
 - Landed the data in **Bronze zone** of ADLS in **Parquet format**.
-![Azure Data Factory Diagram] (Screeenshots/adf.png)
+![Azure Data Factory Diagram] (./Screeenshots/adf.png)
 
 ### 2️⃣ **Transformation – Azure Databricks**
 - Connected Databricks to ADLS using secure access keys / managed identity.  
@@ -51,14 +51,14 @@ The goal is to design an **incremental ingestion and transformation framework** 
   - Deduplication and null handling  
   - Business rule applications  
 - Wrote the cleansed data into **Silver layer** in **Delta format**.
-![Azure Databricks Diagram] (Screeenshots/Silver_pipeline.png)
+![Azure Databricks Diagram] (./Screeenshots/Silver_pipeline.png)
 
 ### 3️⃣ **Quality & SCD Management – LakeFlow**
 - Used **Declarative LakeFlow pipeline** to:
   - Validate data quality across key dimensions.  
   - Apply **SCD Type 2 logic** to track historical changes in dimensional data.  
   - Write the final datasets to the **Gold layer** in Delta format.
-![Gold-Layer] (Screeenshots/gold_dlt.png)
+![Gold-Layer] (./Screeenshots/gold_dlt.png)
 
 ### 4️⃣ **Downstream Analytics**
 - Gold layer data can be consumed by **Power BI**, **Synapse Serverless**, or **Databricks SQL** for BI and reporting.
